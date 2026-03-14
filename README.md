@@ -27,3 +27,37 @@
 - **Стиль кода**: Google C++ Style, Doxygen комментарии
 
 ## 🏗 Архитектура
+
+
+### Ключевые компоненты:
+
+- **VirtualController**: Абстрактный класс с методом `play(UserAction_t)`
+- **GameController**: Реализует паттерн "Стратегия" для выбора игры
+- **Snake**: Полноценная ООП-модель на C++ с наследованием (Point -> ApplePoint)
+- **Tetris FSM**: Конечный автомат на C (таблица переходов 8x9)
+
+## 🚀 Установка и запуск
+
+### Требования
+- Linux/macOS
+- CMake 3.10+
+- ncurses
+- g++ с поддержкой C++17
+
+### Сборка
+
+```bash
+# Клонирование
+git clone https://github.com/yourusername/brickgame.git
+cd brickgame
+
+# Сборка через CMake
+mkdir build && cd build
+cmake ..
+make
+
+# Или через Makefile
+make
+
+# Запуск
+./brick_game
