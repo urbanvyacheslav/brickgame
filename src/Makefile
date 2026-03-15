@@ -15,7 +15,6 @@ TETRIS_PATH 		  :=brick_game/tetris
 SNAKE_PATH  		  :=brick_game/snake
 CLI_PATH			  :=gui
 CONTROLLER_PATH		  :=controller
-BUILD_PATH			  :=builds
 VALGRIND_RES 		  :=tests/RESULT_VALGRIND.txt
 COMMON_PATH           :=common_objects
 
@@ -48,12 +47,12 @@ install: uninstall install_cli_brick_game
 
 .PHONY: install_cli_brick_game
 install_cli_brick_game: build_cli build_snake build_tetris $(CONTROLLER_SOURCES) $(CLI_VIEW_SOURCES)
-	$(CXX) $(CXXFLAGS) app/cli_brick_game.cpp  $(CONTROLLER_SOURCES) $(CLI_VIEW_SOURCES) $(SNAKE_LIBNAME) $(TETRIS_LIBNAME) $(CLI_LIBNAME) -o $(BUILD_PATH)/cli_brick_game $(LDGUI) 
+	$(CXX) $(CXXFLAGS) app/cli_brick_game.cpp  $(CONTROLLER_SOURCES) $(CLI_VIEW_SOURCES) $(SNAKE_LIBNAME) $(TETRIS_LIBNAME) $(CLI_LIBNAME) -o cli_brick_game $(LDGUI) 
 	rm -f $(CONTROLLER_PATH)/*.o
 
 .PHONY: uninstall
 uninstall: 
-	rm -f $(BUILD_PATH)/*
+	rm -f cli_brick_game
 
 .PHONY: build_tetris
 build_tetris: $(TETRIS_OBJECTS)

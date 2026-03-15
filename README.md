@@ -94,7 +94,7 @@ cd brickgame/src
 make
 
 # Запуск
-./builds/cli_brick_game
+./cli_brick_game
 ```
 
 ### Управление
